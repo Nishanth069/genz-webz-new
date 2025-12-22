@@ -104,18 +104,19 @@ export default function AboutPage() {
                   variants={staggerContainer}
                   className="space-y-8"
                 >
-                  <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight">
-                    Our Philosophy: <br />
-                    <span className="text-purple-500">Harmonious Innovation.</span>
-                  </motion.h2>
-                  <motion.div variants={fadeInUp} className="space-y-6 text-zinc-400 text-lg leading-relaxed">
-                    <p>
-                      At ZYXEN, we reject the notion that high-performance engineering must be sterile, or that beautiful design must be fragile. We operate in the confluence of these two worlds.
-                    </p>
-                    <p>
-                      Our name originates from the duality of <span className="text-white font-medium">Kinetic Velocity (Zy)</span> and <span className="text-white font-medium">Infinite Horizon (Xen)</span>. It represents our commitment to building systems that don't just function, but inspire.
-                    </p>
-                  </motion.div>
+                    <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl font-bold leading-tight tracking-tighter">
+                      The Geometry of <br />
+                      <span className="text-purple-500 italic font-medium">Digital Artistry.</span>
+                    </motion.h2>
+                    <motion.div variants={fadeInUp} className="space-y-6 text-zinc-500 text-lg leading-relaxed font-light">
+                      <p>
+                        We operate at the delicate intersection of logic and beauty. Where others see software as a utility, we see it as a canvas for technical excellence.
+                      </p>
+                      <p>
+                        The ZYXEN ethos is rooted in the fusion of <span className="text-white">Kinetic Velocity</span> and <span className="text-white">Infinite Horizon</span>. We craft ecosystems that are as resilient as they are breathtaking.
+                      </p>
+                    </motion.div>
+
                 </motion.div>
                 
                 <motion.div 
