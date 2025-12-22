@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="sticky top-0 z-[100] w-full bg-black/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <header className="sticky top-0 z-[100] w-full bg-black/60 backdrop-blur-xl border-b border-white/[0.08] transition-all duration-300">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 smooth-transition hover:opacity-80">
           <Image
