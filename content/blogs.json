@@ -109,7 +109,7 @@
       "category": "Engineering",
       "featured": false,
       "published": true,
-      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1600&auto=format&fit=crop",
+        "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop",
       "content": "# The Art of Scalable Architecture\n\nBuilding software that stands the test of time requires more than just code; it requires a vision for scalability and maintainability.\n\n## Modular Design\n\nA scalable system is built on modular components. By breaking down complex systems into smaller, independent parts, we can ensure that updates to one area don't negatively impact others.\n\n## Performance First\n\nScalability and performance are deeply linked. A system that performs well under low load is more likely to scale effectively when demand increases.\n\n## Building for the Future\n\nTechnology changes fast, but core architectural principles remain relatively stable. By adhering to clean code standards and well-documented patterns, we create systems that are ready for whatever the future holds."
     }
   ]
