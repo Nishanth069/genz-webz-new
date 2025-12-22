@@ -30,33 +30,27 @@ const Header: React.FC = () => {
           </span>
         </a>
 
-        <nav className="flex items-center gap-8">
-          <a
-            href="/#crafted"
-            onClick={handleWorkClick}
-            className="text-nav-link text-gray-300 hover:text-white smooth-transition"
-          >
-            Work
-          </a>
-          <a
-            href="/about"
-            className="text-nav-link text-gray-300 hover:text-white smooth-transition"
-          >
-            About
-          </a>
+          <nav className="flex items-center gap-8">
             <a
-              href="/blogs"
+              href="/#crafted"
+              onClick={handleWorkClick}
               className="text-nav-link text-gray-300 hover:text-white smooth-transition"
             >
-              Blogs
+              Work
             </a>
             <a
-              href="/contact"
+              href="/about"
               className="text-nav-link text-gray-300 hover:text-white smooth-transition"
             >
-              Contact
+              About
             </a>
-        </nav>
+              <a
+                href="/contact"
+                className="text-nav-link text-gray-300 hover:text-white smooth-transition"
+              >
+                Contact
+              </a>
+          </nav>
       </div>
     </header>
   );
