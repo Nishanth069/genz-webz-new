@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 import SmoothTransitionsProvider from '@/components/animations/smooth-transitions';
-import { Rocket, Paintbrush, Shield, ArrowRight, Target, Zap, Heart, Code } from 'lucide-react';
+import { Target, Zap, Heart } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeInUp = {
@@ -58,27 +58,26 @@ export default function AboutPage() {
                 variants={staggerContainer}
                 className="space-y-10"
               >
-                  <motion.div variants={fadeInUp} className="flex justify-center">
-                    <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-[10px] font-bold tracking-[0.4em] uppercase backdrop-blur-sm">
-                      Distinction in Engineering
-                    </span>
-                  </motion.div>
-                  
-                  <motion.h1
-                    variants={fadeInUp}
-                    className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] bg-gradient-to-b from-white via-white to-white/20 bg-clip-text text-transparent"
-                  >
-                    Defining the <br />
-                    Invisible Standard.
-                  </motion.h1>
-                  
-                  <motion.p
-                    variants={fadeInUp}
-                    className="text-lg md:text-2xl text-zinc-500 max-w-3xl mx-auto leading-relaxed font-light tracking-wide"
-                  >
-                    ZYXEN is a boutique collective of artisans and engineers dedicated to the pursuit of digital perfection.
-                  </motion.p>
-
+                <motion.div variants={fadeInUp} className="flex justify-center">
+                  <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-[10px] font-bold tracking-[0.4em] uppercase backdrop-blur-sm">
+                    Distinction in Engineering
+                  </span>
+                </motion.div>
+                
+                <motion.h1
+                  variants={fadeInUp}
+                  className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] bg-gradient-to-b from-white via-white to-white/20 bg-clip-text text-transparent"
+                >
+                  Defining the <br />
+                  Invisible Standard.
+                </motion.h1>
+                
+                <motion.p
+                  variants={fadeInUp}
+                  className="text-lg md:text-2xl text-zinc-500 max-w-3xl mx-auto leading-relaxed font-light tracking-wide"
+                >
+                  ZYXEN is a boutique collective of artisans and engineers dedicated to the pursuit of digital perfection.
+                </motion.p>
               </motion.div>
             </div>
             
@@ -104,19 +103,18 @@ export default function AboutPage() {
                   variants={staggerContainer}
                   className="space-y-8"
                 >
-                    <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl font-bold leading-tight tracking-tighter">
-                      The Geometry of <br />
-                      <span className="text-purple-500 italic font-medium">Digital Artistry.</span>
-                    </motion.h2>
-                    <motion.div variants={fadeInUp} className="space-y-6 text-zinc-500 text-lg leading-relaxed font-light">
-                      <p>
-                        We operate at the delicate intersection of logic and beauty. Where others see software as a utility, we see it as a canvas for technical excellence.
-                      </p>
-                      <p>
-                        The ZYXEN ethos is rooted in the fusion of <span className="text-white">Kinetic Velocity</span> and <span className="text-white">Infinite Horizon</span>. We craft ecosystems that are as resilient as they are breathtaking.
-                      </p>
-                    </motion.div>
-
+                  <motion.h2 variants={fadeInUp} className="text-4xl md:text-6xl font-bold leading-tight tracking-tighter">
+                    The Geometry of <br />
+                    <span className="text-purple-500 italic font-medium">Digital Artistry.</span>
+                  </motion.h2>
+                  <motion.div variants={fadeInUp} className="space-y-6 text-zinc-500 text-lg leading-relaxed font-light">
+                    <p>
+                      We operate at the delicate intersection of logic and beauty. Where others see software as a utility, we see it as a canvas for technical excellence.
+                    </p>
+                    <p>
+                      The ZYXEN ethos is rooted in the fusion of <span className="text-white">Kinetic Velocity</span> and <span className="text-white">Infinite Horizon</span>. We craft ecosystems that are as resilient as they are breathtaking.
+                    </p>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
@@ -138,44 +136,28 @@ export default function AboutPage() {
           {/* Core Pillars */}
           <section className="py-32 bg-[#020202]">
             <div className="max-w-7xl mx-auto px-6">
-                <div className="text-center mb-24 space-y-4">
-                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Our Fundamentals</h2>
-                  <div className="w-24 h-[1px] bg-purple-500/50 mx-auto" />
-                </div>
-                
-                <div className="grid md:grid-cols-3 gap-12">
-                  {[
-                    {
-                      icon: <Zap className="w-8 h-8 text-purple-500" />,
-                      title: "Frictionless Velocity",
-                      desc: "Performance is an absolute. We engineer environments that respond at the speed of thought, ensuring your vision is never hindered by latency."
-                    },
-                    {
-                      icon: <Target className="w-8 h-8 text-purple-500" />,
-                      title: "Surgical Precision",
-                      desc: "Complexity refined. We dissect intricate problems to deliver solutions that are robust, scalable, and meticulously executed to the last pixel."
-                    },
-                    {
-                      icon: <Heart className="w-8 h-8 text-purple-500" />,
-                      title: "Aesthetic Intent",
-                      desc: "Beauty with purpose. Every design decision is an invitation into a world where form and function exist in seamless, evocative harmony."
-                    }
-                  ].map((pillar, i) => (
-px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-lg"
-                  >
-                    View Our Work
-                  </Link>
-                </div>
+              <div className="text-center mb-24 space-y-4">
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Our Fundamentals</h2>
+                <div className="w-24 h-[1px] bg-purple-500/50 mx-auto" />
               </div>
-            </div>
-          </section>
-        </main>
-        <Footer />
-      </div>
-    </SmoothTransitionsProvider>
-  );
-}
-
+              
+              <div className="grid md:grid-cols-3 gap-12">
+                {[
+                  {
+                    icon: <Zap className="w-8 h-8 text-purple-500" />,
+                    title: "Frictionless Velocity",
+                    desc: "Performance is an absolute. We engineer environments that respond at the speed of thought, ensuring your vision is never hindered by latency."
+                  },
+                  {
+                    icon: <Target className="w-8 h-8 text-purple-500" />,
+                    title: "Surgical Precision",
+                    desc: "Complexity refined. We dissect intricate problems to deliver solutions that are robust, scalable, and meticulously executed to the last pixel."
+                  },
+                  {
+                    icon: <Heart className="w-8 h-8 text-purple-500" />,
+                    title: "Aesthetic Intent",
+                    desc: "Beauty with purpose. Every design decision is an invitation into a world where form and function exist in seamless, evocative harmony."
+                  }
                 ].map((pillar, i) => (
                   <motion.div
                     key={i}
@@ -188,7 +170,7 @@ px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-color
                       {pillar.icon}
                     </div>
                     <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
-                    <p className="text-zinc-400 leading-relaxed font-light">{pillar.desc}</p>
+                    <p className="text-zinc-500 leading-relaxed font-light">{pillar.desc}</p>
                   </motion.div>
                 ))}
               </div>
@@ -201,8 +183,8 @@ px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-color
             <div className="max-w-7xl mx-auto px-6 relative z-10">
               <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                 <div className="max-w-2xl">
-                  <h2 className="text-4xl md:text-6xl font-bold mb-6">Expertise Redefined.</h2>
-                  <p className="text-zinc-400 text-lg">Our multi-disciplinary team dissolves the boundaries between software, strategy, and design.</p>
+                  <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tighter">Expertise Redefined.</h2>
+                  <p className="text-zinc-500 text-lg font-light">Our multi-disciplinary team dissolves the boundaries between high-scale architecture and evocative design.</p>
                 </div>
                 <div className="text-purple-500 font-mono text-sm tracking-widest">EST. 2025</div>
               </div>
@@ -229,7 +211,7 @@ px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-color
           <section className="py-40">
             <div className="max-w-5xl mx-auto px-6">
               <div className="text-center space-y-12">
-                <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+                <h2 className="text-5xl md:text-8xl font-bold tracking-tighter">
                   Ready to Build <br />
                   the Exceptional?
                 </h2>
@@ -243,7 +225,7 @@ px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-color
                   </Link>
                   <Link
                     href="/#crafted"
-                    className="px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-lg"
+                    className="px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-lg font-light"
                   >
                     View Our Work
                   </Link>
