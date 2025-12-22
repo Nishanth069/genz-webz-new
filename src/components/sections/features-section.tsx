@@ -39,7 +39,7 @@ const featuresData: Feature[] = [
       label: "Business Automation",
       title: "Business Process Automation That Works Smarter",
       description: "Streamline your operations with intelligent automation that reduces manual work and improves efficiency. Our automation solutions are designed to integrate seamlessly with your existing systems while delivering measurable ROI.",
-      imageSrc: "/previews/bussiness.png",
+        imageSrc: "/previews/business.png",
       imageAlt: "Business Automation",
       layout: 'right'
     }
