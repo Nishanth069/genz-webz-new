@@ -5,22 +5,17 @@ import { motion } from 'framer-motion';
 import Header from '@/components/sections/header';
 import Footer from '@/components/sections/footer';
 import SmoothTransitionsProvider from '@/components/animations/smooth-transitions';
-import { Rocket, Paintbrush, Shield, ArrowRight } from 'lucide-react';
+import { Rocket, Paintbrush, Shield, ArrowRight, Target, Zap, Heart, Code } from 'lucide-react';
 import Link from 'next/link';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] as const } }
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
 };
 
 const staggerContainer = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-};
-
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.9 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const } }
+  visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
 };
 
 export default function AboutPage() {
@@ -35,10 +30,10 @@ export default function AboutPage() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -100px 0px' }
+      { threshold: 0.1 }
     );
 
-    const elements = document.querySelectorAll('.scroll-trigger-item');
+    const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => observerRef.current?.observe(el));
 
     return () => {
@@ -46,283 +41,196 @@ export default function AboutPage() {
     };
   }, []);
 
-    return (
-      <SmoothTransitionsProvider>
-        <div className="min-h-screen bg-black text-white antialiased">
-          <Header />
-          <main>
-          <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-950/20 via-black to-black" />
-            <div className="absolute inset-0">
-              <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] animate-pulse" />
-              <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-violet-600/10 rounded-full blur-[100px] animate-pulse" style={{ animationDelay: '1s' }} />
-            </div>
+  return (
+    <SmoothTransitionsProvider>
+      <div className="min-h-screen bg-black text-white antialiased selection:bg-purple-500/30">
+        <Header />
+        <main>
+          {/* Hero Section */}
+          <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(88,28,135,0.15),transparent_70%)]" />
+            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] pointer-events-none" />
             
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
               <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={staggerContainer}
-                className="space-y-8"
+                className="space-y-10"
               >
-                <motion.span
-                  variants={fadeInUp}
-                  className="inline-block text-sm font-semibold uppercase tracking-[0.2em] text-purple-400 border border-purple-500/30 px-4 py-2 rounded-full"
-                >
-                  About ZYXEN
-                </motion.span>
+                <motion.div variants={fadeInUp} className="flex justify-center">
+                  <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-xs font-bold tracking-[0.3em] uppercase backdrop-blur-sm">
+                    The ZYXEN Standard
+                  </span>
+                </motion.div>
                 
                 <motion.h1
                   variants={fadeInUp}
-                  className="text-5xl md:text-7xl font-bold leading-tight bg-gradient-to-r from-white via-white to-purple-200 bg-clip-text text-transparent"
+                  className="text-6xl md:text-8xl font-bold tracking-tight leading-[1.1] bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent"
                 >
-                  Architecting Elegance in the Digital Frontier.
+                  Engineering the <br />
+                  Future of Intelligence.
                 </motion.h1>
                 
                 <motion.p
                   variants={fadeInUp}
-                  className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light"
+                  className="text-lg md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light italic"
                 >
-                  At ZYXEN, we synthesize technical mastery with avant-garde design to craft digital ecosystems that transcend conventional boundaries.
+                  "Where surgical technical precision meets visionary aesthetic grace."
                 </motion.p>
               </motion.div>
             </div>
+            
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 text-zinc-500"
+            >
+              <span className="text-[10px] uppercase tracking-[0.4em]">Scroll to explore</span>
+              <div className="w-[1px] h-12 bg-gradient-to-b from-purple-500 to-transparent" />
+            </motion.div>
           </section>
 
-          <section className="py-24 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-slate-950/50 to-black" />
-            <div className="relative z-10 max-w-4xl mx-auto px-6">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="space-y-12"
-              >
-                <div className="text-center space-y-4">
-                  <motion.h2
-                    variants={fadeInUp}
-                    className="text-4xl md:text-5xl font-bold"
-                  >
-                    THE ZYXEN STORY
-                  </motion.h2>
-                  <motion.p
-                    variants={fadeInUp}
-                    className="text-purple-400 font-mono text-sm tracking-widest"
-                  >
-                    PRONOUNCED: "ZY-ZEN"
-                  </motion.p>
-                </div>
-                
-                  <motion.div
-                    variants={fadeInUp}
-                    className="relative group"
-                  >
-                    <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-violet-600 rounded-full group-hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-shadow" />
-                    <div className="pl-8 space-y-6">
-                      <p className="text-xl md:text-2xl text-white font-medium leading-relaxed">
-                        ZYXEN is the linguistic convergence of kinetic vitality and nascent horizons.
-                      </p>
-                      <p className="text-lg text-gray-300 leading-relaxed text-justify font-light">
-                        Born from a desire to harmonize raw engineering power with sophisticated aesthetics, our name encapsulates our dual nature. 
-                        <span className="text-white font-semibold"> "Zy"</span> evokes the kinetic momentum and competitive edge essential in the modern technological landscape. 
-                        <span className="text-white font-semibold"> "Xen"</span>, derived from the Greek <span className="italic text-purple-300">xenos</span>, signifies our dedication to exploring the unknown, welcoming future challenges as distinguished guests.
-                      </p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    variants={fadeInUp}
-                    className="relative group"
-                  >
-                    <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-violet-600 rounded-full group-hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-shadow" />
-                    <div className="pl-8 space-y-6">
-                      <p className="text-lg text-gray-300 leading-relaxed text-justify font-light">
-                        We established ZYXEN on the premise that technology should be an instrument of profound impact. We identified an industry-wide dissonance between products that possess visual appeal and those that demonstrate true performance. ZYXEN was engineered to eliminate this divide, delivering solutions defined by intelligence, elegance, and surgical precision.
-                      </p>
-                    </div>
-                  </motion.div>
-                  
-                  <motion.div
-                    variants={fadeInUp}
-                    className="relative group"
-                  >
-                    <div className="absolute -left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-violet-600 rounded-full group-hover:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-shadow" />
-                    <div className="pl-8 space-y-6">
-                      <p className="text-lg text-gray-300 leading-relaxed text-justify font-light">
-                        Every engagement within our studio is an opportunity to push the zenith of digital engineering. Our narrative is one of relentless refinement—a continuous quest to provide visionary brands with the technical architecture they deserve.
-                      </p>
-                    </div>
-                  </motion.div>
-              </motion.div>
-            </div>
-          </section>
-
-          <section className="py-24 bg-gradient-to-b from-black to-slate-950/30">
-            <div className="max-w-6xl mx-auto px-6">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="text-center space-y-4 mb-16"
-              >
-                <motion.h2
-                  variants={fadeInUp}
-                  className="text-4xl md:text-5xl font-bold"
-                >
-                  WHAT DRIVES US
-                </motion.h2>
-              </motion.div>
-
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={staggerContainer}
-                className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-              >
-                  <motion.div
-                    variants={scaleIn}
-                    className="group relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 border border-slate-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.15)]"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10 space-y-4">
-                      <h3 className="text-2xl font-bold text-white">Intuitive Intellect</h3>
-                      <p className="text-gray-400 leading-relaxed font-light">
-                        We develop cognitive digital solutions that solve complex challenges with lucidity and profound purpose.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={scaleIn}
-                    className="group relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 border border-slate-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.15)]"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10 space-y-4">
-                      <h3 className="text-2xl font-bold text-white">Engineered Mastery</h3>
-                      <p className="text-gray-400 leading-relaxed font-light">
-                        Transcending code through scalable architecture and performance-centric systems design.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={scaleIn}
-                    className="group relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 border border-slate-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.15)]"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10 space-y-4">
-                      <h3 className="text-2xl font-bold text-white">Aesthetic Precision</h3>
-                      <p className="text-gray-400 leading-relaxed font-light">
-                        Meticulous design that harmonizes high-fidelity usability with distinctive brand identity.
-                      </p>
-                    </div>
-                  </motion.div>
-
-                  <motion.div
-                    variants={scaleIn}
-                    className="group relative bg-gradient-to-br from-slate-900/80 to-slate-900/40 border border-slate-800 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(147,51,234,0.15)]"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10 space-y-4">
-                      <h3 className="text-2xl font-bold text-white">Future Ascendance</h3>
-                      <p className="text-gray-400 leading-relaxed font-light">
-                        An unwavering commitment to evolution, ensuring our partners remain at the vanguard of innovation.
-                      </p>
-                    </div>
-                  </motion.div>
-              </motion.div>
-            </div>
-          </section>
-
-          <section className="py-24 bg-gradient-to-b from-slate-950/30 to-black">
+          {/* Philosophy Section */}
+          <section className="py-32 relative border-y border-white/5">
             <div className="max-w-7xl mx-auto px-6">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={staggerContainer}
-                className="text-center space-y-4 mb-16"
-              >
-                <motion.span
-                  variants={fadeInUp}
-                  className="inline-block text-sm font-semibold uppercase tracking-[0.15em] text-purple-400"
+              <div className="grid lg:grid-cols-2 gap-20 items-center">
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={staggerContainer}
+                  className="space-y-8"
                 >
-                  Who We Are
-                </motion.span>
-                <motion.h2
-                  variants={fadeInUp}
-                  className="text-4xl md:text-5xl font-bold"
+                  <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold leading-tight">
+                    Our Philosophy: <br />
+                    <span className="text-purple-500">Harmonious Innovation.</span>
+                  </motion.h2>
+                  <motion.div variants={fadeInUp} className="space-y-6 text-zinc-400 text-lg leading-relaxed">
+                    <p>
+                      At ZYXEN, we reject the notion that high-performance engineering must be sterile, or that beautiful design must be fragile. We operate in the confluence of these two worlds.
+                    </p>
+                    <p>
+                      Our name originates from the duality of <span className="text-white font-medium">Kinetic Velocity (Zy)</span> and <span className="text-white font-medium">Infinite Horizon (Xen)</span>. It represents our commitment to building systems that don't just function, but inspire.
+                    </p>
+                  </motion.div>
+                </motion.div>
+                
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1 }}
+                  className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 bg-zinc-900/50 group"
                 >
-                  Our Core Strengths
-                </motion.h2>
-              </motion.div>
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1635776062127-d379bfcbb9c8?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-60 transition-all duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8 p-6 backdrop-blur-md bg-black/40 rounded-2xl border border-white/10">
+                    <p className="text-sm font-light italic text-white/80">"Architecture is the learned game, correct and magnificent, of forms assembled in the light."—Le Corbusier</p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </section>
 
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-50px" }}
-                variants={staggerContainer}
-                className="grid md:grid-cols-3 gap-8"
-              >
+          {/* Core Pillars */}
+          <section className="py-32 bg-[#020202]">
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="text-center mb-24 space-y-4">
+                <h2 className="text-4xl md:text-5xl font-bold">The Pillars of ZYXEN</h2>
+                <div className="w-24 h-[1px] bg-purple-500 mx-auto" />
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-12">
                 {[
-                  { title: "Innovation-Driven", desc: "We build forward-thinking digital solutions powered by creativity and modern engineering principles." },
-                  { title: "Expert Engineering", desc: "Our skilled engineers craft scalable, reliable, and high-performance software systems." },
-                  { title: "User-Focused", desc: "We design intuitive, user-centered products that deliver seamless digital experiences." },
-                  { title: "Scalable Systems", desc: "We develop future-proof systems engineered for long-term business growth and evolution." },
-                  { title: "End-to-End Solutions", desc: "We handle the full product lifecycle, delivering complete and dependable solutions." },
-                  { title: "Seamless Delivery", desc: "We ensure smooth collaboration with clear communication and predictable delivery timelines." }
-                ].map((item, index) => (
+                  {
+                    icon: <Zap className="w-8 h-8 text-purple-400" />,
+                    title: "Velocity",
+                    desc: "We build for the speed of modern business. Our systems are optimized for millisecond-latency and rapid deployment without compromising stability."
+                  },
+                  {
+                    icon: <Target className="w-8 h-8 text-purple-400" />,
+                    title: "Precision",
+                    desc: "Every line of code is intentional. We practice surgical engineering, ensuring that every asset, query, and interaction serves a defined purpose."
+                  },
+                  {
+                    icon: <Heart className="w-8 h-8 text-purple-400" />,
+                    title: "Elegance",
+                    desc: "Design is not a coat of paint—it is the soul of the product. We create interfaces that are intuitive, emotive, and enduringly beautiful."
+                  }
+                ].map((pillar, i) => (
                   <motion.div
-                    key={index}
-                    variants={fadeInUp}
-                    className="group p-6 rounded-xl bg-slate-900/30 border border-slate-800/50 hover:border-purple-500/30 transition-all duration-300"
+                    key={i}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="p-10 rounded-3xl bg-zinc-900/30 border border-white/5 hover:border-purple-500/20 transition-colors group"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-2 h-2 mt-3 bg-purple-500 rounded-full group-hover:scale-150 transition-transform duration-300" />
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                        <p className="text-gray-400">{item.desc}</p>
-                      </div>
+                    <div className="mb-6 p-4 rounded-2xl bg-purple-500/5 w-fit group-hover:bg-purple-500/10 transition-colors">
+                      {pillar.icon}
                     </div>
+                    <h3 className="text-2xl font-bold mb-4">{pillar.title}</h3>
+                    <p className="text-zinc-400 leading-relaxed font-light">{pillar.desc}</p>
                   </motion.div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </section>
 
-          <section className="py-24">
-            <div className="max-w-4xl mx-auto px-6">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={scaleIn}
-                className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-950/50 via-slate-900 to-slate-900 border border-purple-500/20 p-12 md:p-16 text-center"
-              >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.15),transparent_50%)]" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(124,58,237,0.1),transparent_50%)]" />
-                
-                <div className="relative z-10 space-y-6">
-                  <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                    Let's Build Something Amazing Together.
-                  </h2>
-                  <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                    Ready to transform your vision into reality? Let's create digital experiences that define your brand.
-                  </p>
-                  <div className="pt-4">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 bg-purple-600 text-white font-semibold px-8 py-4 rounded-full hover:bg-purple-500 transition-all duration-300 hover:shadow-[0_0_30px_rgba(147,51,234,0.4)] hover:scale-105"
-                    >
-                      Work With Us
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
-                  </div>
+          {/* Capabilities */}
+          <section className="py-32 relative overflow-hidden">
+            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
+              <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div className="max-w-2xl">
+                  <h2 className="text-4xl md:text-6xl font-bold mb-6">Expertise Redefined.</h2>
+                  <p className="text-zinc-400 text-lg">Our multi-disciplinary team dissolves the boundaries between software, strategy, and design.</p>
                 </div>
-              </motion.div>
+                <div className="text-purple-500 font-mono text-sm tracking-widest">EST. 2025</div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 border border-white/5 rounded-3xl overflow-hidden">
+                {[
+                  "Intelligent Web Platforms",
+                  "Generative UI Engineering",
+                  "High-Scale Architecture",
+                  "Predictive Analytics Integration",
+                  "Brand Identity Design",
+                  "Cross-Platform Ecosystems"
+                ].map((skill, i) => (
+                  <div key={i} className="bg-black p-12 hover:bg-zinc-900/50 transition-colors group">
+                    <span className="text-zinc-600 block mb-6 font-mono text-xs">0{i+1}</span>
+                    <h4 className="text-xl font-medium group-hover:text-purple-400 transition-colors">{skill}</h4>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-40">
+            <div className="max-w-5xl mx-auto px-6">
+              <div className="text-center space-y-12">
+                <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+                  Ready to Build <br />
+                  the Exceptional?
+                </h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <Link
+                    href="/contact"
+                    className="group relative px-10 py-5 rounded-full bg-white text-black font-bold text-lg overflow-hidden transition-all hover:scale-105"
+                  >
+                    <span className="relative z-10">Initiate Partnership</span>
+                    <div className="absolute inset-0 bg-purple-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  </Link>
+                  <Link
+                    href="/#crafted"
+                    className="px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-lg"
+                  >
+                    View Our Work
+                  </Link>
+                </div>
+              </div>
             </div>
           </section>
         </main>
