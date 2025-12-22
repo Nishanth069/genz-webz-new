@@ -58,26 +58,27 @@ export default function AboutPage() {
                 variants={staggerContainer}
                 className="space-y-10"
               >
-                <motion.div variants={fadeInUp} className="flex justify-center">
-                  <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-xs font-bold tracking-[0.3em] uppercase backdrop-blur-sm">
-                    The ZYXEN Standard
-                  </span>
-                </motion.div>
-                
-                <motion.h1
-                  variants={fadeInUp}
-                  className="text-6xl md:text-8xl font-bold tracking-tight leading-[1.1] bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent"
-                >
-                  Engineering the <br />
-                  Future of Intelligence.
-                </motion.h1>
-                
-                <motion.p
-                  variants={fadeInUp}
-                  className="text-lg md:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed font-light italic"
-                >
-                  "Where surgical technical precision meets visionary aesthetic grace."
-                </motion.p>
+                  <motion.div variants={fadeInUp} className="flex justify-center">
+                    <span className="px-5 py-2 rounded-full border border-purple-500/30 bg-purple-500/5 text-purple-400 text-[10px] font-bold tracking-[0.4em] uppercase backdrop-blur-sm">
+                      Distinction in Engineering
+                    </span>
+                  </motion.div>
+                  
+                  <motion.h1
+                    variants={fadeInUp}
+                    className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.9] bg-gradient-to-b from-white via-white to-white/20 bg-clip-text text-transparent"
+                  >
+                    Defining the <br />
+                    Invisible Standard.
+                  </motion.h1>
+                  
+                  <motion.p
+                    variants={fadeInUp}
+                    className="text-lg md:text-2xl text-zinc-500 max-w-3xl mx-auto leading-relaxed font-light tracking-wide"
+                  >
+                    ZYXEN is a boutique collective of artisans and engineers dedicated to the pursuit of digital perfection.
+                  </motion.p>
+
               </motion.div>
             </div>
             
