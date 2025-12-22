@@ -138,28 +138,44 @@ export default function AboutPage() {
           {/* Core Pillars */}
           <section className="py-32 bg-[#020202]">
             <div className="max-w-7xl mx-auto px-6">
-              <div className="text-center mb-24 space-y-4">
-                <h2 className="text-4xl md:text-5xl font-bold">The Pillars of ZYXEN</h2>
-                <div className="w-24 h-[1px] bg-purple-500 mx-auto" />
+                <div className="text-center mb-24 space-y-4">
+                  <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">Our Fundamentals</h2>
+                  <div className="w-24 h-[1px] bg-purple-500/50 mx-auto" />
+                </div>
+                
+                <div className="grid md:grid-cols-3 gap-12">
+                  {[
+                    {
+                      icon: <Zap className="w-8 h-8 text-purple-500" />,
+                      title: "Frictionless Velocity",
+                      desc: "Performance is an absolute. We engineer environments that respond at the speed of thought, ensuring your vision is never hindered by latency."
+                    },
+                    {
+                      icon: <Target className="w-8 h-8 text-purple-500" />,
+                      title: "Surgical Precision",
+                      desc: "Complexity refined. We dissect intricate problems to deliver solutions that are robust, scalable, and meticulously executed to the last pixel."
+                    },
+                    {
+                      icon: <Heart className="w-8 h-8 text-purple-500" />,
+                      title: "Aesthetic Intent",
+                      desc: "Beauty with purpose. Every design decision is an invitation into a world where form and function exist in seamless, evocative harmony."
+                    }
+                  ].map((pillar, i) => (
+px-10 py-5 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-lg"
+                  >
+                    View Our Work
+                  </Link>
+                </div>
               </div>
-              
-              <div className="grid md:grid-cols-3 gap-12">
-                {[
-                  {
-                    icon: <Zap className="w-8 h-8 text-purple-400" />,
-                    title: "Velocity",
-                    desc: "We build for the speed of modern business. Our systems are optimized for millisecond-latency and rapid deployment without compromising stability."
-                  },
-                  {
-                    icon: <Target className="w-8 h-8 text-purple-400" />,
-                    title: "Precision",
-                    desc: "Every line of code is intentional. We practice surgical engineering, ensuring that every asset, query, and interaction serves a defined purpose."
-                  },
-                  {
-                    icon: <Heart className="w-8 h-8 text-purple-400" />,
-                    title: "Elegance",
-                    desc: "Design is not a coat of paint—it is the soul of the product. We create interfaces that are intuitive, emotive, and enduringly beautiful."
-                  }
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
+    </SmoothTransitionsProvider>
+  );
+}
+
                 ].map((pillar, i) => (
                   <motion.div
                     key={i}
