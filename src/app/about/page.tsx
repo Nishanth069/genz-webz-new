@@ -21,7 +21,7 @@ const staggerContainer = {
 export default function AboutPage() {
   return (
     <SmoothTransitionsProvider>
-      <div className="min-h-screen bg-[#050505] text-white antialiased selection:bg-white selection:text-black">
+      <div className="min-h-screen bg-black text-white antialiased selection:bg-white selection:text-black">
         <Header />
         <main>
           {/* Hero Section */}
@@ -60,7 +60,7 @@ export default function AboutPage() {
           </section>
 
           {/* Core Philosophy */}
-          <section className="py-40 border-t border-white/5 bg-[#080808]">
+          <section className="py-40 border-t border-white/5 bg-black">
             <div className="max-w-7xl mx-auto px-6">
               <div className="grid lg:grid-cols-2 gap-24 items-start">
                 <div className="space-y-12">
@@ -87,6 +87,32 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Story Section */}
+          <section className="py-40 border-t border-white/5">
+            <div className="max-w-4xl mx-auto px-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="space-y-12 text-center"
+              >
+                <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">THE GENESIS.</h2>
+                <div className="space-y-8 text-xl md:text-2xl font-light leading-relaxed text-white/60">
+                  <p>
+                    ZYXEN wasn't born in a boardroom; it was born in the silence of late-night debugging and the shared frustration of watching the web become a template of itself. We saw engineering becoming a commodity and design becoming a layer of paint rather than the foundation.
+                  </p>
+                  <p>
+                    We started ZYXEN to prove that performance and poetry can coexist. To build digital artifacts that don't just solve problems, but command presence. This website is our manifest—a testament to the belief that the most powerful engineering is often the most invisible.
+                  </p>
+                  <p className="text-white italic">
+                    We don't just build for the web; we engineer for the human experience.
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </section>
 
@@ -124,7 +150,7 @@ export default function AboutPage() {
           </section>
 
           {/* Capabilities */}
-          <section className="py-40 bg-[#0A0A0A]">
+          <section className="py-40 bg-black">
             <div className="max-w-7xl mx-auto px-6">
               <div className="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-8">
                 <h2 className="text-5xl md:text-8xl font-bold tracking-tighter">OUR SCOPE.</h2>
